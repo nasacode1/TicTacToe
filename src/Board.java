@@ -28,7 +28,7 @@ public class Board {
 
 	public char isGameOver() {
 		//check every column to see if there are any XXX or OOO
-		String line;
+		String line = " ";
 		for (int j=0; j<this.columnsCount; j++) {
 		for(int i=0; i< this.rowsCount ; i++){
 			if (this.Board[i][j] == ' ') {
@@ -36,23 +36,23 @@ public class Board {
 			}
 			line = line + this.Board[i][j];
 		}
-		if(line.equals('ooo') || line.equals('xxx') ) {
-			return line[0];
+		if(line.equals("ooo") || line.equals("xxx") ) {
+			return line.charAt(0);
 		}
 	}
 		//check every row to see if there are any XXX or OOO
 		
-		line = ' ';
+		line = " ";
 		for (int j=0; j<this.rowsCount; j++) {
 			for(int i=0; i< this.columnsCount ; i++){
 				line = line + this.Board[j][i];
 			}
-			if(line.equals('ooo') || line.equals('xxx') ) {
-				return line[0];
+			if(line.equals("ooo") || line.equals("xxx") ) {
+				return line.charAt(0);
 			}
 		}
 		
-		line = ' ';
+		line = " ";
 		for (int i=0; i<this.rowsCount; i++) {
 			for(int j=0; j< this.columnsCount ; j++){
 				if(i == j) {
@@ -60,20 +60,20 @@ public class Board {
 				}
 				
 			}
-			if(line.equals('ooo') || line.equals('xxx') ) {
-				return line[0];
+			if(line.equals("ooo") || line.equals("xxx") ) {
+				return line.charAt(0);
 			}
 		}
 		
-		line = ' ';
+		line = " ";
 		for (int i=this.rowsCount - 1; i>= 0; i--) {
 			for(int j=this.columnsCount; j>= 0 ; j--){
 				if(i == j) {
 					line = line + this.Board[i][j];
 				}
 			}
-			if(line.equals('ooo') || line.equals('xxx') ) {
-				return line[0];
+			if(line.equals("ooo") || line.equals("xxx") ) {
+				return line.charAt(0);
 			}
 		}
 		return 'd';
